@@ -1,19 +1,29 @@
+import React,{ useState } from "react";
+
+import SearchBar from "./components/search-bar";
+import SearchFilters from "./components/search-filters";
+import IdeaGrid from "./components/idea-grid";
+
 
 export default function App() {
 
-  const animals = ["Lion","Cow","Snake","Lizard"];
-
-
+  const ideas = ["1","2","3","4"];
 
   return (
+
+    <div className="flex flex-col">
+
     <div>
-      <h1>Animals: </h1>
-      <ul>
-       {/* {animals.map(animal =>( <li key={animal} >{animal}</li> ) )} */}
-       {/* {animals.map((animal) =>( <li key={animal} >{animal}</li> ) )} */}
-       {animals.map((animal) =>{ return <li key={animal} >{animal}</li> } )}
-       {/* {animals.map((anima) =>{ <li key={animal} >{animal}</li> } )} */}
-      </ul>
+    <SearchBar></SearchBar>
+    </div>
+    
+<div className="bg-red">
+  hello
+<SearchFilters className="w-1/2 bg-red" ></SearchFilters>
+    <IdeaGrid ideas={ideas} className="w-1/2 bg-red" ></IdeaGrid>
+       
+</div>
+ 
     </div>
   );
 }
